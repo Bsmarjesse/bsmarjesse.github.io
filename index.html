@@ -1,128 +1,298 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Benjamin Smarjesse | IT Support Portfolio</title>
 
     <style>
-        body{
-            background:#0d1117;
-            color:white;
-            font-family:Segoe UI, Arial;
-            text-align:center;
-            padding:60px;
+        * {
+            box-sizing: border-box;
         }
 
-        .card{
-            background:#161b22;
-            padding:30px;
-            border-radius:12px;
-            max-width:700px;
-            margin:auto;
-            box-shadow:0 0 25px rgba(0,0,0,.6);
+        body {
+            margin: 0;
+            background: #0d1117;
+            color: white;
+            font-family: "Segoe UI", Arial, sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
         }
 
-        h1{font-size:48px;margin-bottom:5px;}
-        h2{color:#58a6ff;font-weight:normal;}
-        p{color:#c9d1d9;font-size:18px;line-height:1.6;}
-
-        .section{
-            margin-top:40px;
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        a{
-            color:#58a6ff;
-            text-decoration:none;
+        .card {
+            background: #161b22;
+            border-radius: 16px;
+            padding: 48px 40px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        h1 {
+            font-size: 52px;
+            margin: 0 0 10px;
+        }
+
+        .subtitle {
+            color: #58a6ff;
+            font-size: 20px;
+            margin-bottom: 14px;
+        }
+
+        .hero-meta {
+            color: #c9d1d9;
+            font-size: 17px;
+            margin: 0;
+        }
+
+        .section {
+            margin-top: 48px;
+        }
+
+        .section h2 {
+            color: #58a6ff;
+            font-size: 34px;
+            margin: 0 0 18px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .about-text,
+        .contact-text,
+        .project-summary,
+        .resume-text {
+            color: #c9d1d9;
+            font-size: 18px;
+            text-align: left;
+            margin: 0;
+        }
+
+        .project-card {
+            background: #0f1720;
+            border: 1px solid #273142;
+            border-radius: 14px;
+            padding: 24px;
+            margin-top: 22px;
+            text-align: left;
+        }
+
+        .project-card h3 {
+            margin: 0 0 12px;
+            font-size: 26px;
+            color: white;
+        }
+
+        .project-card p {
+            color: #c9d1d9;
+            font-size: 17px;
+            margin: 0 0 14px;
+        }
+
+        .project-card ul {
+            margin: 0 0 18px 20px;
+            padding: 0;
+            color: #c9d1d9;
+        }
+
+        .project-card li {
+            margin-bottom: 8px;
+        }
+
+        .skills-line {
+            color: #c9d1d9;
+            font-size: 17px;
+            margin-top: 6px;
+        }
+
+        .button-row {
+            margin-top: 18px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 16px;
+            background: #007acc;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: 0.2s ease;
+        }
+
+        .btn:hover {
+            background: #1f8fff;
+        }
+
+        .btn-secondary {
+            background: #243447;
+        }
+
+        .btn-secondary:hover {
+            background: #30465e;
+        }
+
+        .resume-box,
+        .contact-box {
+            background: #0f1720;
+            border: 1px solid #273142;
+            border-radius: 14px;
+            padding: 24px;
+            text-align: left;
+        }
+
+        .contact-links {
+            margin-top: 12px;
+        }
+
+        .contact-links a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        .contact-links div {
+            margin-bottom: 8px;
+            color: #c9d1d9;
+        }
+
+        a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 700px) {
+            .card {
+                padding: 32px 22px;
+            }
+
+            h1 {
+                font-size: 38px;
+            }
+
+            .section h2 {
+                font-size: 28px;
+            }
+
+            .project-card h3 {
+                font-size: 22px;
+            }
         }
     </style>
 </head>
 
 <body>
+    <div class="container">
+        <div class="card">
 
-<div class="card">
+            <div class="hero">
+                <h1>Benjamin Smarjesse</h1>
+                <div class="subtitle">IT Support Specialist</div>
+                <p class="hero-meta">
+                    CompTIA A+ Certified | Pursuing Network+<br>
+                    Windows 10/11 | Active Directory | Hardware | Networking
+                </p>
+            </div>
 
-<h1>Benjamin Smarjesse</h1>
-<h2>IT Support Specialist</h2>
+            <div class="section">
+                <h2>About Me</h2>
+                <p class="about-text">
+                    I am an IT support professional with hands-on experience troubleshooting Windows systems,
+                    printers, user accounts, and network connectivity issues. I build home lab projects focused
+                    on Active Directory, networking, and security to strengthen real-world infrastructure skills.
+                </p>
+            </div>
 
-<p>
-CompTIA A+ Certified<br>
-Pursuing Network+<br>
-Windows 10/11 • Active Directory • Hardware • Networking
-</p>
+            <div class="section">
+                <h2>Home Lab Projects</h2>
 
-<div class="section">
-<h2>About Me</h2>
-<p>
-I am an entry-level IT Support professional with hands-on experience troubleshooting
-Windows systems, printers, user accounts, and network connectivity issues.
-I support users through real-world environments, a personal home lab, and professional experience.
-</p>
-</div>
+                <div class="project-card">
+                    <h3>Enterprise Active Directory Security Homelab</h3>
+                    <p class="project-summary">
+                        Built a Windows Server-based Active Directory lab in Hyper-V to simulate enterprise identity,
+                        access control, DNS, Group Policy, and security administration.
+                    </p>
 
-<div class="section">
-<h2>Home Lab Projects</h2>
-<ul style="text-align:left; display:inline-block;">
-<li>Built enterprise Active Directory domain in Hyper-V</li>
-<li>Deployed multiple Domain Controllers with DNS</li>
-<li>Configured Role-Based Access Control using AD security groups</li>
-<li>Implemented SMB file shares with NTFS permissions</li>
-<li>Deployed network drive mapping using Group Policy</li>
-<li>Implemented Windows LAPS for automated password rotation</li>
-<li>Built Enterprise PKI using Active Directory Certificate Services</li>
-<li>Designed Tiered Administration Model (Tier0 / Tier1 / Tier2)</li>
-<li>Deployed Privileged Access Workstation (PAW)</li>
-<li>Configured security auditing to monitor privileged group changes</li>
-</ul>
-</div>
+                    <ul>
+                        <li>Built enterprise Active Directory domain in Hyper-V</li>
+                        <li>Deployed multiple Domain Controllers with DNS</li>
+                        <li>Configured Group Policy, role-based access control, and SMB file shares</li>
+                        <li>Implemented Windows LAPS and Active Directory Certificate Services</li>
+                        <li>Designed Tiered Administration model and deployed a Privileged Access Workstation</li>
+                    </ul>
 
-    <p>
-Full enterprise Active Directory security homelab whitepaper:
-</p>
+                    <div class="button-row">
+                        <a class="btn" href="AD_Security_Architecture_Whitepaper_watermark.pdf" target="_blank">
+                            View Whitepaper
+                        </a>
+                    </div>
+                </div>
 
-<a href="AD_Security_Architecture_Whitepaper_watermark.pdf" target="_blank">
-Download Active Directory Security Homelab Whitepaper
-</a>
+                <div class="project-card">
+                    <h3>Pi-hole Network-Wide Ad Blocking Lab</h3>
+                    <p class="project-summary">
+                        Deployed Pi-hole on a Raspberry Pi to implement a network-wide DNS filtering solution and
+                        improve visibility into DNS traffic within my home lab environment.
+                    </p>
 
-    
+                    <ul>
+                        <li>Configured client DNS to route traffic through Pi-hole</li>
+                        <li>Monitored real-time DNS queries and validated traffic flow</li>
+                        <li>Troubleshot IPv6 DNS bypass behavior from ISP configuration</li>
+                        <li>Used SSH for remote administration and Linux-based management</li>
+                    </ul>
 
-<h3>Pi-hole Network-Wide Ad Blocking Lab</h3>
+                    <p class="skills-line">
+                        <strong>Skills:</strong> DNS, Linux, Raspberry Pi, Networking, Security
+                    </p>
 
-<p>
-  Deployed Pi-hole on Raspberry Pi to implement a network-wide DNS filtering solution.
-  Configured router-level DNS enforcement and disabled IPv6 to prevent DNS bypass.
-</p>
+                    <div class="button-row">
+                        <a class="btn" href="https://github.com/bsmarjesse/pihole-ad-blocking-lab" target="_blank">
+                            View Project on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-<p>
-  <strong>Skills:</strong> DNS, Linux, Raspberry Pi, Networking, Security
-</p>
+            <div class="section">
+                <h2>Resume</h2>
+                <div class="resume-box">
+                    <p class="resume-text">
+                        Download my professional resume below.
+                    </p>
 
-<div style="margin-top: 10px;">
-<a href="https://github.com/bsmarjesse/pihole-ad-blocking-lab" target="_blank" 
-   style="display:inline-block; padding:8px 14px; background-color:#007acc; color:white; text-decoration:none; border-radius:6px;">
-   View Project on GitHub
-</a>
-</div>
+                    <div class="button-row">
+                        <a class="btn" href="Benjamin Smarjesse Resume_pdf.pdf" target="_blank">
+                            View / Download Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
 
+            <div class="section">
+                <h2>Contact</h2>
+                <div class="contact-box">
+                    <div class="contact-links">
+                        <div>Email: <a href="mailto:bsmar371@gmail.com">bsmar371@gmail.com</a></div>
+                        <div>GitHub: <a href="https://github.com/Bsmarjesse" target="_blank">github.com/Bsmarjesse</a></div>
+                    </div>
+                </div>
+            </div>
 
-
-    <h2>Resume</h2>
-
-<p>Download my professional resume below.</p>
-
-<p>
-<a href="Benjamin Smarjesse Resume_pdf.pdf" target="_blank">
-📄 View / Download Resume
-</a>
-</p>
-    
-<div class="section">
-<h2>Contact</h2>
-<p>
-Email: bsmar371@gmail.com<br>
-GitHub: <a href="https://github.com/Bsmarjesse">github.com/Bsmarjesse</a>
-</p>
-</div>
-
-</div>
-
+        </div>
+    </div>
 </body>
 </html>
