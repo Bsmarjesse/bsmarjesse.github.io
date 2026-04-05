@@ -8,97 +8,113 @@
     <style>
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            margin: 0;
-            background: #0d1117;
-            color: white;
+            background:
+                radial-gradient(circle at top, rgba(88, 166, 255, 0.08), transparent 35%),
+                linear-gradient(180deg, #0b0f14 0%, #0d1117 100%);
+            color: #f0f6fc;
             font-family: "Segoe UI", Arial, sans-serif;
             line-height: 1.6;
             padding: 40px 20px;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 960px;
             margin: 0 auto;
         }
 
         .card {
-            background: #161b22;
-            border-radius: 16px;
-            padding: 48px 40px;
-            box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+            background: rgba(22, 27, 34, 0.92);
+            border: 1px solid rgba(88, 166, 255, 0.12);
+            border-radius: 20px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(10px);
+            animation: fadeUp 0.8s ease;
         }
 
         .hero {
             text-align: center;
-            margin-bottom: 48px;
+            margin-bottom: 50px;
+            animation: fadeUp 0.8s ease;
         }
 
         h1 {
-            font-size: 52px;
-            margin: 0 0 10px;
+            font-size: 54px;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
         }
 
         .subtitle {
             color: #58a6ff;
-            font-size: 20px;
+            font-size: 22px;
+            font-weight: 600;
             margin-bottom: 14px;
         }
 
         .hero-meta {
             color: #c9d1d9;
             font-size: 17px;
-            margin: 0;
         }
 
         .section {
-            margin-top: 48px;
+            margin-top: 52px;
+            animation: fadeUp 0.9s ease;
         }
 
         .section h2 {
             color: #58a6ff;
-            font-size: 34px;
-            margin: 0 0 18px;
+            font-size: 32px;
+            margin-bottom: 18px;
             text-align: center;
-            font-weight: 600;
         }
 
         .about-text,
-        .contact-text,
-        .project-summary,
         .resume-text {
             color: #c9d1d9;
             font-size: 18px;
             text-align: left;
-            margin: 0;
         }
 
-        .project-card {
-            background: #0f1720;
-            border: 1px solid #273142;
-            border-radius: 14px;
-            padding: 24px;
+        .project-card,
+        .resume-box,
+        .contact-box {
+            background: linear-gradient(180deg, rgba(15, 23, 32, 0.96), rgba(17, 24, 33, 0.96));
+            border: 1px solid rgba(88, 166, 255, 0.14);
+            border-radius: 16px;
+            padding: 26px;
             margin-top: 22px;
             text-align: left;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .project-card:hover,
+        .resume-box:hover,
+        .contact-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 30px rgba(0, 0, 0, 0.35);
+            border-color: rgba(88, 166, 255, 0.3);
         }
 
         .project-card h3 {
-            margin: 0 0 12px;
             font-size: 26px;
-            color: white;
+            margin-bottom: 12px;
+            color: #ffffff;
         }
 
         .project-card p {
             color: #c9d1d9;
             font-size: 17px;
-            margin: 0 0 14px;
+            margin-bottom: 14px;
         }
 
         .project-card ul {
             margin: 0 0 18px 20px;
-            padding: 0;
             color: #c9d1d9;
         }
 
@@ -106,10 +122,11 @@
             margin-bottom: 8px;
         }
 
-        .skills-line {
+        .skills-line,
+        .tech-line {
             color: #c9d1d9;
             font-size: 17px;
-            margin-top: 6px;
+            margin-top: 8px;
         }
 
         .button-row {
@@ -121,66 +138,69 @@
 
         .btn {
             display: inline-block;
-            padding: 10px 16px;
-            background: #007acc;
+            padding: 11px 18px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #007acc, #58a6ff);
             color: white;
             text-decoration: none;
-            border-radius: 8px;
             font-weight: 600;
-            transition: 0.2s ease;
+            border: none;
+            box-shadow: 0 8px 18px rgba(0, 122, 204, 0.25);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
         }
 
         .btn:hover {
-            background: #1f8fff;
-        }
-
-        .btn-secondary {
-            background: #243447;
-        }
-
-        .btn-secondary:hover {
-            background: #30465e;
-        }
-
-        .resume-box,
-        .contact-box {
-            background: #0f1720;
-            border: 1px solid #273142;
-            border-radius: 14px;
-            padding: 24px;
-            text-align: left;
-        }
-
-        .contact-links {
-            margin-top: 12px;
-        }
-
-        .contact-links a {
-            color: #58a6ff;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(0, 122, 204, 0.35);
+            filter: brightness(1.05);
             text-decoration: none;
         }
 
         .contact-links div {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             color: #c9d1d9;
+            font-size: 17px;
         }
 
         a {
             color: #58a6ff;
             text-decoration: none;
+            transition: color 0.2s ease;
         }
 
         a:hover {
+            color: #79c0ff;
             text-decoration: underline;
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(88, 166, 255, 0.25), transparent);
+            margin: 40px 0 10px;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @media (max-width: 700px) {
             .card {
-                padding: 32px 22px;
+                padding: 34px 22px;
             }
 
             h1 {
                 font-size: 38px;
+            }
+
+            .subtitle {
+                font-size: 18px;
             }
 
             .section h2 {
@@ -190,17 +210,27 @@
             .project-card h3 {
                 font-size: 22px;
             }
+
+            .hero-meta,
+            .about-text,
+            .resume-text,
+            .project-card p,
+            .project-card li,
+            .skills-line,
+            .tech-line,
+            .contact-links div {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
-
 <body>
     <div class="container">
         <div class="card">
 
             <div class="hero">
                 <h1>Benjamin Smarjesse</h1>
-                <div class="subtitle">IT Support Specialist</div>
+                <div class="subtitle">IT Support Specialist | Active Directory | Networking | Home Lab Engineer</div>
                 <p class="hero-meta">
                     CompTIA A+ Certified | Pursuing Network+<br>
                     Windows 10/11 | Active Directory | Hardware | Networking
@@ -221,7 +251,7 @@
 
                 <div class="project-card">
                     <h3>Enterprise Active Directory Security Homelab</h3>
-                    <p class="project-summary">
+                    <p>
                         Built a Windows Server-based Active Directory lab in Hyper-V to simulate enterprise identity,
                         access control, DNS, Group Policy, and security administration.
                     </p>
@@ -234,6 +264,10 @@
                         <li>Designed Tiered Administration model and deployed a Privileged Access Workstation</li>
                     </ul>
 
+                    <p class="tech-line">
+                        <strong>Tech:</strong> Windows Server, Active Directory, DNS, GPO, Hyper-V, PKI
+                    </p>
+
                     <div class="button-row">
                         <a class="btn" href="AD_Security_Architecture_Whitepaper_watermark.pdf" target="_blank">
                             View Whitepaper
@@ -243,7 +277,7 @@
 
                 <div class="project-card">
                     <h3>Pi-hole Network-Wide Ad Blocking Lab</h3>
-                    <p class="project-summary">
+                    <p>
                         Deployed Pi-hole on a Raspberry Pi to implement a network-wide DNS filtering solution and
                         improve visibility into DNS traffic within my home lab environment.
                     </p>
@@ -254,6 +288,10 @@
                         <li>Troubleshot IPv6 DNS bypass behavior from ISP configuration</li>
                         <li>Used SSH for remote administration and Linux-based management</li>
                     </ul>
+
+                    <p class="tech-line">
+                        <strong>Tech:</strong> Pi-hole, Linux, DNS, Raspberry Pi, SSH
+                    </p>
 
                     <p class="skills-line">
                         <strong>Skills:</strong> DNS, Linux, Raspberry Pi, Networking, Security
@@ -282,15 +320,15 @@
                 </div>
             </div>
 
-            <div class="section">
-                <h2>Contact</h2>
-                <div class="contact-box">
-                    <div class="contact-links">
-                        <div>Email: <a href="mailto:bsmar371@gmail.com">bsmar371@gmail.com</a></div>
-                        <div>GitHub: <a href="https://github.com/Bsmarjesse" target="_blank">github.com/Bsmarjesse</a></div>
-                    </div>
-                </div>
-            </div>
+          <div class="section">
+    <h2>Contact</h2>
+       <div class="contact-links">
+    <div>📧 <a href="mailto:bsmar371@gmail.com">bsmar371@gmail.com</a></div>
+    <div>💻 <a href="https://github.com/Bsmarjesse" target="_blank">github.com/Bsmarjesse</a></div>
+    <div>🔗 <a href="https://www.linkedin.com/in/benjamin-smarjesse/" target="_blank">linkedin.com/in/benjamin-smarjesse</a></div>
+</div>
+    </div>
+</div>
 
         </div>
     </div>
